@@ -9,8 +9,8 @@
 <body>
     <div class="container" style="margin-top :50px;">
         <h1>Todoリストの追加</h1>
-        <form action='{{ url('/todos')}}' method="post">
-            {{csrf_field()}}
+        <form action="{{ url('/todos')}}" method="post">
+            @csrf
             <div class="form-group">
                 <label>やることを追加してください</label>
                 <input type="text" name="body" class="form-control" placeholder="todo list" style="max-width:1000px;">
@@ -31,14 +31,14 @@
             <tr>
                 <td>{{$todo->body}}</td>
                 <td>
-                    <form action="{{ action('TodosController@edit', $todo) }}" method="post">
+                    <form action="{{ action('TodosController@edit', $todo) }}" method="get">
                     {{ csrf_field() }}
                     <button type="submit" class="btn btn-primary">編集</button>
                     </form>
                 </td>
 
                 <td>
-                    <form action=""{{url('/todos', $todo->id)}}" method="post">
+                    <form action="{{url('/todos', $todo->id)}}" method="post">
                     {{csrf_field()}}
                     <button type="submit" class="btn btn-primary">削除</button>
                     </form>
