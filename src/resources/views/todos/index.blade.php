@@ -10,7 +10,7 @@
     <div class="container" style="margin-top :50px;">
         <h1>Todoリストの追加</h1>
         <form action="{{ url('/todos')}}" method="post">
-            @csrf
+            {{csrf_field()}}
             <div class="form-group">
                 <label>やることを追加してください</label>
                 <input type="text" name="body" class="form-control" placeholder="todo list" style="max-width:1000px;">
