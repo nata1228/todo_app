@@ -16,12 +16,12 @@ class TodosController extends Controller
         $todo = new Todo();
         $todo->body = $request->body;
         $todo->save();
-        return redirect('/');
+        return redirect('/todos');
     }
 
     public function destroy(todo $todo) {
         $todo->delete();
-        return redirect('/');
+        return redirect('/todos');
     }
 
     public function edit(todo $todo){
@@ -31,6 +31,6 @@ class TodosController extends Controller
     public function update(Request $request,todo $todo){
         $todo->body = $request->body;
         $todo->save();
-        return redirect('/');
+        return redirect('/todos');
     }
 }

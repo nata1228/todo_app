@@ -40,6 +40,7 @@
                 <td>
                     <form action="{{url('/todos', $todo->id)}}" method="post">
                     {{csrf_field()}}
+                    {{method_field('delete')}}
                     <button type="submit" class="btn btn-danger">削除</button>
                     </form>
                 </td>
